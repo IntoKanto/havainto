@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SHavainnot</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div>
+		
+	<form th:object="${havainto}" th:action="@{../save}" action="#" method="post">
+		  	<label for="id"></label>
+		  	<input type="hidden" id="id" th:field="*{havaintoid}"  />
+		  	
+		  	<label for="fname">Havainto</label>
+			<input type="text" id="fname" th:field="*{name}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="lname">Ilmoittajan nimi</label>
+			<input type="text" id="lname" th:field="*{ilmoittaja}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		
+
+			<div style="clear: both; display: block; height: 10px;"></div>						
+		  	<label for="deplist">Suunta</label>
+			 <select id="deplist" th:field="*{suunta}" class="form-control">
+       			<option th:each="su: ${suunnat}" th:value="${su.suuntaid}" th:text="${su.osa}"></option>
+    		</select>
+    		
+    		<div style="clear: both; display: block; height: 10px;"></div>						
+		  	<label for="typlist">Tyyppi</label>
+			 <select id="typlist" th:field="*{tyyppi}" class="form-control">
+       			<option th:each="ty: ${tyypit}" th:value="${ty.tyyppiid}" th:text="${ty.seloste}"></option>
+    		</select>
+    		
+    		<div style="clear: both; display: block; height: 10px;"></div>						
+		  	<label for="tillist">Tila</label>
+			 <select id="tillist" th:field="*{tila}" class="form-control">
+       			<option th:each="ti: ${tilat}" th:value="${ti.tilaid}" th:text="${ti.tilassa}"></option>
+    		</select>
+			
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" value="Save"></input>
+		</form>
+	
+		
+	</div>
+	
+</body>
+</html>

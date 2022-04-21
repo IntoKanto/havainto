@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Havainto</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+
+<div class="col-md-4"><h3>Havainnot</h3></div>
+
+<table class="table table-striped">
+<tr>
+<th>Havainto</th>
+<th>Ilmoittaja</th>
+<th>Suunta</th>
+
+<th>Tyyppi</th>
+<tr th:each = "row : ${havainnot}">
+ <td th:text="${row.name}"></td> 
+ <td th:text="${row.ilmoittaja}"></td>
+  <td th:text="${row.suunta.osa}"> </td>
+  
+
+ <td th:text="${row.tyyppi.seloste}"></td>
+ <td><a th:href="@{/edit/{id}(id=${row.havaintoid})}" >Edit</a></td>
+ <td><a th:href="@{/delete/{id}(id=${row.havaintoid})}" class="btn btn-xs btn-danger">Delete</a></td>
+  
+</table> 
+<a href="/add" class="btn btn-primary">Lisää Havainto</a> 
+</body>
+</html>

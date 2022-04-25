@@ -1,6 +1,8 @@
 package com.example.demo23;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,9 +47,11 @@ public class Demo23Application {
 			tyrepo.save(new Tyyppi("Roskat"));
 			
 			
-			hrepo.save(new Havainto("Jäätä käytäävällä", "Anatoli Tselms", srepo.findByOsa("eteläinen").get(0),trepo.findByTilassa("tehty").get(0), tyrepo.findBySeloste("tievaurio").get(0)));
 			
 			
+			hrepo.save(new Havainto("Jäätä käytäävällä", "Anatoli Tselms", srepo.findByOsa("eteläinen").get(0),trepo.findByTilassa("tehty").get(0), tyrepo.findBySeloste("tievaurio").get(0), "2022-01-23"));
+			hrepo.save(new Havainto("Kaatunut puu", "Mikko Ala-Räihä", srepo.findByOsa("itäinen").get(0), trepo.findByTilassa("odottaa").get(0), tyrepo.findBySeloste("Viheralueet").get(0), "2022-03-31"));
+			hrepo.save(new Havainto("Hirveästi roskia torilla", "Hanna Havainto", srepo.findByOsa("pohjoinen").get(0), trepo.findByTilassa("odottaa").get(0), tyrepo.findBySeloste("Roskat").get(0), "2022-02-28"));
 		};
 	}
 

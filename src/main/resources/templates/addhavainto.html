@@ -11,6 +11,12 @@
 <div  class="container">
 	<div>
 	<form th:object="${havainto}" th:action="@{save}" action="#" method="post">
+			
+			<div style="clear: both; display: block; height: 10px;"></div>
+    		<label for="hdate">Pävämäärä</label>
+			<input type="date" id="hdate" th:field="*{pvm}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
 		  	
 			<div style="clear: both; display: block; height: 10px;"></div>
 			<label for="fname">Havainto</label>
@@ -38,7 +44,7 @@
     		</select>
     		
     		<div style="clear: both; display: block; height: 10px;"></div>
-    			<label for="lname">Ilmoittajan nimi</label>
+    		<label for="lname">Ilmoittajan nimi</label>
 			<input type="text" id="lname" th:field="*{ilmoittaja}" />
 			<div style="clear: both; display: block; height: 10px;"></div>
 		

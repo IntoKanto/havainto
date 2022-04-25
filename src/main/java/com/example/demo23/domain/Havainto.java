@@ -1,5 +1,7 @@
 package com.example.demo23.domain;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +16,7 @@ public class Havainto {
 	private Long havaintoid;
 	private String name;
 	private String ilmoittaja;
+	private String pvm;
 
 	@ManyToOne
 	@JoinColumn(name = "suuntaid")
@@ -27,13 +30,14 @@ public class Havainto {
 	
 	public Havainto () {}
 	
-	public Havainto(String name, String ilmoittaja, Suunta suunta, Tila tila, Tyyppi tyyppi) {
+	public Havainto(String name, String ilmoittaja, Suunta suunta, Tila tila, Tyyppi tyyppi, String pvm) {
 		super();
 		this.name = name;
 		this.ilmoittaja = ilmoittaja;
 		this.suunta = suunta;
 		this.tila = tila;
 		this.tyyppi = tyyppi;
+		this.pvm = pvm;
 		
 		
 	}
@@ -82,18 +86,33 @@ public class Havainto {
 		this.suunta = suunta;
 	}
 	
-	public Tila getTila () {
+	
+	
+	
+
+	public Tila getTila() {
 		return tila;
 	}
-	public void SetTila(Tila tila) {
+
+	public void setTila(Tila tila) {
 		this.tila = tila;
+	}
+
+	public String getPvm() {
+		return pvm;
+	}
+
+	public void setPvm(String pvm) {
+		this.pvm = pvm;
 	}
 
 	@Override
 	public String toString() {
-		return "Havainto [havaintoid=" + havaintoid + ", name=" + name + ", ilmoittaja=" + ilmoittaja + ", suunta="
-				+ suunta + ", tila=" + tila + ", tyyppi=" + tyyppi + "]";
+		return "Havainto [havaintoid=" + havaintoid + ", name=" + name + ", ilmoittaja=" + ilmoittaja + ", pvm=" + pvm
+				+ ", suunta=" + suunta + ", tila=" + tila + ", tyyppi=" + tyyppi + "]";
 	}
+
+	
 
 	
 	

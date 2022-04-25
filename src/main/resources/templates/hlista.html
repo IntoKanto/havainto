@@ -14,15 +14,14 @@
 <th>Havainto</th>
 <th>Ilmoittaja</th>
 <th>Suunta</th>
-
 <th>Tyyppi</th>
+<th>Päivämäärä</th>
 <tr th:each = "row : ${havainnot}">
  <td th:text="${row.name}"></td> 
  <td th:text="${row.ilmoittaja}"></td>
-  <td th:text="${row.suunta.osa}"> </td>
-  
-
+ <td th:text="${row.suunta.osa}"> </td>
  <td th:text="${row.tyyppi.seloste}"></td>
+ <td th:text="${row.pvm}"></td>
  <td><a th:href="@{/edit/{id}(id=${row.havaintoid})}" >Edit</a></td>
  <td><a th:href="@{/delete/{id}(id=${row.havaintoid})}" class="btn btn-xs btn-danger">Delete</a></td>
   

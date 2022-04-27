@@ -22,7 +22,7 @@
  <td th:text="${row.suunta.osa}"> </td>
  <td th:text="${row.tyyppi.seloste}"></td>
  <td th:text="${row.pvm}"></td>
- <td><a th:href="@{/edit/{id}(id=${row.havaintoid})}" >Edit</a></td>
+ <td><a th:href="@{/edit/{id}(id=${row.havaintoid})}" class="btn btn-xs btn-danger" >Edit</a></td>
  <td><a th:href="@{/delete/{id}(id=${row.havaintoid})}" class="btn btn-xs btn-danger">Delete</a></td>
   
 </table> 
